@@ -1,0 +1,25 @@
+<%= form_for(@personal_flight) do |f| %>
+  <% if @personal_flight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@personal_flight.errors.count, "error") %> prohibited this personal_flight from being saved:</h2>
+
+      <ul>
+      <% @personal_flight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :personal_id, "Rut personal" %><br>
+    <%= f.text_field :personal_id %>
+  </div>
+  <div class="field">
+    <%= f.label :flight_id, "ID vuelo" %><br>
+    <%= f.text_field :flight_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Agregar Personal/Vuelo" %>
+  </div>
+<% end %>

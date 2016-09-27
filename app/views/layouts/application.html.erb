@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compañía de Aviones</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Conectado como <strong><%= current_user.email %></strong>.
+  <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Iniciar sesión", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+
+<body>
+
+<% if notice %>
+  <p class="alert alert-success"><%= "Conectado exitosamente" %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= "Es necesario iniciar sesión o registrarse antes de continuar." %></p>
+<% end %>
+
+
+<%= yield %>
+
+</body>
+</html>

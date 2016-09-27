@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origen:</strong>
+  <%= @flight.origen %>
+</p>
+
+<p>
+  <strong>Destino:</strong>
+  <%= @flight.destino %>
+</p>
+
+<p>
+  <strong>Fecha vuelo:</strong>
+  <%= @flight.fecha %>
+</p>
+
+<p>
+  <strong>Matrícula avión:</strong>
+  <%= @flight.airplane %>
+</p>
+
+<%= link_to 'Editar', edit_flight_path(@flight) %> |
+<%= link_to 'Atrás', flights_path %>

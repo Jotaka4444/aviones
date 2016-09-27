@@ -1,0 +1,33 @@
+<!--<p id="notice"><%= notice %></p>-->
+
+<h1>Lista de Vuelos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Origen</th>
+      <th>Destino</th>
+      <th>Fecha vuelo</th>
+      <th>Matrícula avión</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flights.each do |flight| %>
+      <tr>
+        <td><%= flight.origen %></td>
+        <td><%= flight.destino %></td>
+        <td><%= flight.fecha %></td>
+        <td><%= flight.airplane %></td>
+        <td><%= link_to 'Mostrar', flight %></td>
+        <td><%= link_to 'Editar', edit_flight_path(flight) %></td>
+        <td><%= link_to 'Borrar', flight, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Vuelo', new_flight_path %>

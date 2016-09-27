@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rut personal:</strong>
+  <%= @personal_flight.personal %>
+</p>
+
+<p>
+  <strong>ID vuelo:</strong>
+  <%= @personal_flight.flight %>
+</p>
+
+<%= link_to 'Editar', edit_personal_flight_path(@personal_flight) %> |
+<%= link_to 'Atrás', personal_flights_path %>

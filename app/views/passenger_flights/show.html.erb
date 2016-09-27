@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Clase:</strong>
+  <%= @passenger_flight.clase %>
+</p>
+
+<p>
+  <strong>Asiento:</strong>
+  <%= @passenger_flight.asiento %>
+</p>
+
+<p>
+  <strong>Rut pasajero:</strong>
+  <%= @passenger_flight.passenger %>
+</p>
+
+<p>
+  <strong>ID vuelo:</strong>
+  <%= @passenger_flight.flight %>
+</p>
+
+<%= link_to 'Editar', edit_passenger_flight_path(@passenger_flight) %> |
+<%= link_to 'Atrás', passenger_flights_path %>

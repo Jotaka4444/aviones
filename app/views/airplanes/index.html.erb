@@ -1,0 +1,37 @@
+<!--<p id="notice"><%= notice %></p>-->
+
+<h1>Lista de Aviones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Matrícula</th>
+      <th>Fabricante</th>
+      <th>Modelo</th>
+      <th>Capacidad</th>
+      <th>Autonomía</th>
+      <th>Descripción</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @airplanes.each do |airplane| %>
+      <tr>
+        <td><%= airplane.matricula %></td>
+        <td><%= airplane.fabricante %></td>
+        <td><%= airplane.modelo %></td>
+        <td><%= airplane.capacidad %></td>
+        <td><%= airplane.autonomia %></td>
+        <td><%= airplane.descripcion %></td>
+        <td><%= link_to 'Mostrar', airplane %></td>
+        <td><%= link_to 'Editar', edit_airplane_path(airplane) %></td>
+        <td><%= link_to 'Borrar', airplane, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Avión', new_airplane_path %>

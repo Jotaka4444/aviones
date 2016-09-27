@@ -1,0 +1,38 @@
+
+<p>
+  <strong>Rut:</strong>
+  <%= @passenger.rut %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @passenger.nombre %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @passenger.correo %>
+</p>
+
+<p>
+  <strong>Teléfono:</strong>
+  <%= @passenger.telefono %>
+</p>
+
+<p>
+  <strong>Fecha de nacimiento:</strong>
+  <%= @passenger.f_nacimiento %>
+</p>
+
+<p>
+  <strong>Nacionalidad:</strong>
+  <%= @passenger.nacionalidad %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @passenger.descripcion %>
+</p>
+
+<%= link_to 'Editar', edit_passenger_path(@passenger) %> |
+<%= link_to 'Atrás', passengers_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  matricula: MyString
+  fabricante: MyString
+  modelo: MyString
+  capacidad: 1
+  autonomia: 2016-09-08 15:43:48
+  descripcion: MyString
+
+two:
+  matricula: MyString
+  fabricante: MyString
+  modelo: MyString
+  capacidad: 1
+  autonomia: 2016-09-08 15:43:48
+  descripcion: MyString

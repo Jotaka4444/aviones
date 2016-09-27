@@ -1,0 +1,33 @@
+<%= form_for(@flight) do |f| %>
+  <% if @flight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
+
+      <ul>
+      <% @flight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :origen, "Origen" %><br>
+    <%= f.text_field :origen %>
+  </div>
+  <div class="field">
+    <%= f.label :destino, "Destino" %><br>
+    <%= f.text_field :destino %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha, "Fecha vuelo" %><br>
+    <input id="flight_fecha" type='date' min='1900-01-01' max='2016-12-31' class="form-control" name="flight[fecha]"></input>
+  </div>
+  <div class="field">
+    <%= f.label :airplane_id, "Matrícula avión" %><br>
+    <%= collection_select( :flight, :airplane_id, Airplane.all, :id, :matricula, { :multiple => false }, { :class => "my custom-class"}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Agregar Vuelo" %>
+  </div>
+<% end %>

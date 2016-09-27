@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Matrícula:</strong>
+  <%= @airplane.matricula %>
+</p>
+
+<p>
+  <strong>Fabricante:</strong>
+  <%= @airplane.fabricante %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @airplane.modelo %>
+</p>
+
+<p>
+  <strong>Capacidad:</strong>
+  <%= @airplane.capacidad %>
+</p>
+
+<p>
+  <strong>Autonomía:</strong>
+  <%= @airplane.autonomia %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @airplane.descripcion %>
+</p>
+
+<%= link_to 'Editar', edit_airplane_path(@airplane) %> |
+<%= link_to 'Atrás', airplanes_path %>

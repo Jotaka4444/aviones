@@ -1,0 +1,29 @@
+<!--<p id="notice"><%= notice %></p>-->
+
+<h1>Lista de Personal/Vuelo</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rut personal</th>
+      <th>ID vuelo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personal_flights.each do |personal_flight| %>
+      <tr>
+        <td><%= personal_flight.personal %></td>
+        <td><%= personal_flight.flight %></td>
+        <td><%= link_to 'Mostrar', personal_flight %></td>
+        <td><%= link_to 'Editar', edit_personal_flight_path(personal_flight) %></td>
+        <td><%= link_to 'Borrar', personal_flight, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Personal/Vuelo', new_personal_flight_path %>
