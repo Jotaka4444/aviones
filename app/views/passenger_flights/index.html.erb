@@ -1,33 +1,35 @@
 <!--<p id="notice"><%= notice %></p>-->
 
-<h1>Lista de Pasajero/Vuelo</h1>
+<body class="fondo2">
+  <h1>Lista de Pasajero/Vuelo</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Clase</th>
-      <th>Asiento</th>
-      <th>Rut pasajero</th>
-      <th>ID vuelo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @passenger_flights.each do |passenger_flight| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= passenger_flight.clase %></td>
-        <td><%= passenger_flight.asiento %></td>
-        <td><%= passenger_flight.passenger %></td>
-        <td><%= passenger_flight.flight %></td>
-        <td><%= link_to 'Mostrar', passenger_flight %></td>
-        <td><%= link_to 'Editar', edit_passenger_flight_path(passenger_flight) %></td>
-        <td><%= link_to 'Borrar', passenger_flight, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+        <th>Clase</th>
+        <th>Asiento</th>
+        <th>Rut pasajero</th>
+        <th>ID vuelo</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @passenger_flights.each do |passenger_flight| %>
+        <tr>
+          <td><%= passenger_flight.clase %></td>
+          <td><%= passenger_flight.asiento %></td>
+          <td><%= passenger_flight.passenger %></td>
+          <td><%= passenger_flight.flight %></td>
+          <td><%= link_to 'Mostrar', passenger_flight %></td>
+          <td><%= link_to 'Editar', edit_passenger_flight_path(passenger_flight) %></td>
+          <td><%= link_to 'Borrar', passenger_flight, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Nuevo Pasajero/Vuelo', new_passenger_flight_path %>
+  <br>
+
+  <%= link_to 'Nuevo Pasajero/Vuelo', new_passenger_flight_path %>
+</body>

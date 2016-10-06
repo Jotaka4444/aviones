@@ -1,43 +1,45 @@
 <!--<p id="notice"><%= notice %></p>-->
 
-<h1>Lista de Personal</h1>
+<body class="fondo2">
+  <h1>Lista de Personal</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Rut</th>
-      <th>Nombre</th>
-      <th>Cargo</th>
-      <th>Nivel de Inglés</th>
-      <th>Correo</th>
-      <th>Teléfono</th>
-      <th>Fecha de nacimiento</th>
-      <th>Nacionalidad</th>
-      <th>Descripción</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @personals.each do |personal| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= personal.rut %></td>
-        <td><%= personal.nombre %></td>
-        <td><%= personal.cargo %></td>
-        <td><%= personal.n_inlges %></td>
-        <td><%= personal.correo %></td>
-        <td><%= personal.telefono %></td>
-        <td><%= personal.f_nacimiento %></td>
-        <td><%= personal.nacionalidad %></td>
-        <td><%= personal.descripcion %></td>
-        <td><%= link_to 'Mostrar', personal %></td>
-        <td><%= link_to 'Editar', edit_personal_path(personal) %></td>
-        <td><%= link_to 'Borrar', personal, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+        <th>Rut</th>
+        <th>Nombre</th>
+        <th>Cargo</th>
+        <th>Nivel de Inglés</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Fecha de nacimiento</th>
+        <th>Nacionalidad</th>
+        <th>Descripción</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @personals.each do |personal| %>
+        <tr>
+          <td><%= personal.rut %></td>
+          <td><%= personal.nombre %></td>
+          <td><%= personal.cargo %></td>
+          <td><%= personal.n_inlges %></td>
+          <td><%= personal.correo %></td>
+          <td><%= personal.telefono %></td>
+          <td><%= personal.f_nacimiento %></td>
+          <td><%= personal.nacionalidad %></td>
+          <td><%= personal.descripcion %></td>
+          <td><%= link_to 'Mostrar', personal %></td>
+          <td><%= link_to 'Editar', edit_personal_path(personal) %></td>
+          <td><%= link_to 'Borrar', personal, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Nuevo Personal', new_personal_path %>
+  <br>
+
+  <%= link_to 'Nuevo Personal', new_personal_path %>
+</body>

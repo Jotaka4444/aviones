@@ -9,25 +9,69 @@
 
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
-  Conectado como <strong><%= current_user.email %></strong>.
-  <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <body class='fondo'>
+    <h1>Aerolínea Vurea</h1>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Pasajeros <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Mostrar pasajeros</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Agregar un nuevo pasajero</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Personal <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Pasajeros</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Aviones <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Pasajeros</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Vuelos <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Pasajeros</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+    Conectado como <strong><%= current_user.email %></strong>.
+    <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+    <%= yield %>
+  </body>
 <% else %>
-  <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Iniciar sesión", new_user_session_path, :class => 'navbar-link'  %>
+  <body class='fondo'>
+    <h1>Aerolínea Vurea</h1>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    <%= yield %>
+  </body>
 <% end %>
-
-<body>
-
-<% if notice %>
-  <p class="alert alert-success"><%= "Conectado exitosamente" %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= "Es necesario iniciar sesión o registrarse antes de continuar." %></p>
-<% end %>
-
-
-<%= yield %>
-
-</body>
 </html>
